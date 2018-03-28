@@ -1,0 +1,127 @@
+#
+#  tokens.yaml
+#
+#  Created by Sergey Lenkov on 11.01.12.
+#  Copyright (c) 2012 Sergey Lenkov. All rights reserved.
+
+time: [
+    {regexp: '(?i)at[ ]+([0-2][0-9]|[0-9]):([0-5][0-9])[ ]*am', hour: 1, minute: 2, second: 0, modifier: 0},
+    {regexp: '(?i)at[ ]+([0-2][0-9]|[0-9]):([0-5][0-9])[ ]*pm', hour: 1, minute: 2, second: 0, modifier: 12},
+    {regexp: '(?i)в[ ]+([0-2][0-9]|[0-9])[ ]+(часов|часа|час)[ ]+(дня|вечера)', hour: 1, minute: 0, second: 0, modifier: 12},
+    {regexp: '(?i)([0-2][0-9]|[0-9])[ ]+(часов|часа|час)[ ]+(дня|вечера)', hour: 1, minute: 0, second: 0, modifier: 12},
+    {regexp: '(?i)в[ ]+([0-2][0-9]|[0-9])[ ]+(часов|часа|час)[ ]+(утра|ночи)', hour: 1, minute: 0, second: 0, modifier: 0},
+    {regexp: '(?i)([0-2][0-9]|[0-9])[ ]+(часов|часа|час)[ ]+(утра|ночи)', hour: 1, minute: 0, second: 0, modifier: 0},
+    {regexp: '(?i)([0-2][0-9]|[0-9]):([0-5][0-9])[ ]*am', hour: 1, minute: 2, second: 0, modifier: 0},
+    {regexp: '(?i)([0-2][0-9]|[0-9]):([0-5][0-9])[ ]*pm', hour: 1, minute: 2, second: 0, modifier: 12},
+    {regexp: '(?i)в[ ]+([0-2][0-9]|[0-9]):([0-5][0-9])', hour: 1, minute: 2, second: 0},
+    {regexp: '(?i)at[ ]+([0-2][0-9]|[0-9]):([0-5][0-9])', hour: 1, minute: 2, second: 0},
+    {regexp: '(?i)([0-2][0-9]|[0-9]):([0-5][0-9])', hour: 1, minute: 2, second: 0},
+    {regexp: '(?i)в[ ]+([0-2][0-9]|[0-9])[ ]+(часов|часа|час)[ ]+([0-5][0-9])(минуту|минуты|минут)', hour: 1, minute: 3, second: 0},
+    {regexp: '(?i)([0-2][0-9]|[0-9])[ ]+(часов|часа|час)[ ]+([0-5][0-9])(минуту|минуты|минут)', hour: 1, minute: 3, second: 0},
+    {regexp: '(?i)в[ ]+([0-2][0-9]|[0-9])[ ]+(часов|часа|час)', hour: 1, minute: 0, second: 0}
+]
+
+date: [
+    {regexp: '(?i)([0-3][0-9]|[1-9])[ ]+(января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)[ ]+([0-9]{4})', year: 3, month: 2, day: 1},
+    {regexp: '(?i)([0-3][0-9]|[1-9])[ ]+(january|february|march|april|may|june|july|august|september|october|november|december)\b.*([0-9]{4})', year: 3, month: 2, day: 1},
+    {regexp: '(?i)([0-3][0-9]|[1-9])[ ]+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\b.*([0-9]{4})', year: 3, month: 2, day: 1},
+    {regexp: '(?i)([0-3][0-9]|[1-9])(ое|го|е|-ое|-го|-е)[ ]+(января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)[ ]+([0-9]{4})', year: 4, month: 3, day: 1},
+    {regexp: '(?i)([0-3][0-9]|[1-9])(st|nd|rd|th)[ ]+(january|february|march|april|may|june|july|august|september|october|november|december)[ ]+([0-9]{4})', year: 4, month: 3, day: 1},
+    {regexp: '(?i)([0-3][0-9]|[1-9])(st|nd|rd|th)[ ]+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\b.*([0-9]{4})', year: 4, month: 3, day: 1},
+    {regexp: '(?i)(января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)[ ]+([0-3][0-9]|[1-9])[ ]+([0-9]{4})', year: 3, month: 1, day: 2},
+    {regexp: '(?i)(january|february|march|april|may|june|july|august|september|october|november|december)[ ]+([0-3][0-9]|[1-9])[ ]+([0-9]{4})', year: 3, month: 1, day: 2},
+    {regexp: '(?i)(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[ ]+([0-3][0-9]|[1-9])[ ]+([0-9]{4})', year: 3, month: 1, day: 2},
+    {regexp: '(?i)(января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)[ ]+([0-3][0-9]|[1-9])(ое|го|е|-ое|-го|-е)[ ]+([0-9]{4})', year: 4, month: 1, day: 2},
+    {regexp: '(?i)(january|february|march|april|may|june|july|august|september|october|november|december)[ ]+([0-3][0-9]|[1-9])(st|nd|rd|th)[ ]+([0-9]{4})', year: 4, month: 1, day: 2},
+    {regexp: '(?i)(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[ ]+([0-3][0-9]|[1-9])(st|nd|rd|th)[ ]+([0-9]{4})', year: 4, month: 1, day: 2},
+    {regexp: '(?i)([0-3][0-9]|[1-9])[ ]+(января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)', year: 0, month: 2, day: 1},
+    {regexp: '(?i)([0-3][0-9]|[1-9])[ ]+(january|february|march|april|may|june|july|august|september|october|november|december)', year: 0, month: 2, day: 1},
+    {regexp: '(?i)([0-3][0-9]|[1-9])[ ]+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)', year: 0, month: 2, day: 1},
+    {regexp: '(?i)(января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)[ ]+([0-3][0-9]|[1-9])', year: 0, month: 1, day: 2},
+    {regexp: '(?i)(january|february|march|april|may|june|july|august|september|october|november|december)[ ]+([0-3][0-9]|[1-9])', year: 0, month: 1, day: 2},
+    {regexp: '(?i)(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[ ]+([0-3][0-9]|[1-9])', year: 0, month: 1, day: 2},
+    {regexp: '(?i)([0-3][0-9]|[1-9])(ое|го|е|-ое|-го|-е)[ ]+(января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)', year: 0, month: 3, day: 1},
+    {regexp: '(?i)([0-3][0-9]|[1-9])(st|nd|rd|th)[ ]+(january|february|march|april|may|june|july|august|september|october|november|december)', year: 0, month: 3, day: 1},
+    {regexp: '(?i)([0-3][0-9]|[1-9])(st|nd|rd|th)[ ]+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)', year: 0, month: 3, day: 1},
+    {regexp: '(?i)(января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)[ ]+([0-3][0-9]|[1-9])(ое|го|е|-ое|-го|-е)', year: 0, month: 1, day: 2},
+    {regexp: '(?i)(january|february|march|april|may|june|july|august|september|october|november|december)[ ]+([0-3][0-9]|[1-9])(st|nd|rd|th)', year: 0, month: 1, day: 2},
+    {regexp: '(?i)(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[ ]+([0-3][0-9]|[1-9])(st|nd|rd|th)', year: 0, month: 1, day: 2},
+    {regexp: '(?i)([0-3][0-9]|[1-9])\.([0-1][1-2]|[1-9])\.([0-9]{4})', year: 3, month: 2, day: 1},
+    {regexp: '(?i)([0-3][0-9]|[1-9])/([0-1][1-2]|[1-9])/([0-9]{4})', year: 3, month: 2, day: 1},
+    {regexp: '(?i)([0-3][0-9]|[1-9])-([0-1][1-2]|[1-9])-([0-9]{4})', year: 3, month: 2, day: 1},
+    {regexp: '(?i)([0-3][0-9]|[1-9])-(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)-([0-9]{4})', year: 3, month: 2, day: 1}
+]
+
+weekday: [
+    {regexp: '(?i)в[ ]+(понедельник|вторник|среду|четверг|пятницу|субботу|воскресенье)', day: 1},
+    {regexp: '(?i)(on|at)[ ]+(monday|tuesday|wednesday|thursday|friday|saturday|sunday)', day: 2 },
+    {regexp: '(?i)(понедельник|вторник|среда|четверг|пятница|суббота|воскресенье)', day: 1},
+    {regexp: '(?i)(monday|tuesday|wednesday|thursday|friday|saturday|sunday)', day: 1}
+]
+
+future: [
+    {regexp: '(?i)(послезавтра)', group: 1, offset: 2},
+    {regexp: '(?i)(завтра)', group: 1, offset: 1},
+    {regexp: '(?i)(day[ ]+after[ ]+tomorrow)', group: 1, offset: 2},
+    {regexp: '(?i)(tomorrow)', group: 1, offset: 1}
+]
+
+past: [
+    {regexp: '(?i)(позавчера)', group: 1, offset: 2},
+    {regexp: '(?i)(вчера)', group: 1, offset: 1},
+    {regexp: '(?i)(day[ ]+before[ ]+yesterday)', group: 1, offset: 2},
+    {regexp: '(?i)(yesterday)', group: 1, offset: 1}
+]
+
+hours: [
+    {regexp: '(?i)через[ ]+([0-9]+)[ ]+(часов|часа|час)', count: 1},
+    {regexp: '(?i)in[ ]+([0-9]+)[ ]+(hours|hour)', count: 1}
+]
+
+minutes: [
+    {regexp: '(?i)через[ ]+([0-9]+)[ ]+(минуту|минуты|минут)', count: 1},
+    {regexp: '(?i)in[ ]+([0-9]+)[ ]+(minutes|minute)', count: 1}
+]
+
+days: [
+    {regexp: '(?i)через[ ]+([0-9]+)[ ]+(день|дня|дней)', count: 1},
+    {regexp: '(?i)in[ ]+([0-9]+)[ ]+(days|day)', count: 1}
+]
+
+weeks: [
+    {regexp: '(?i)через[ ]+([0-9]+)[ ]+(неделю|недели|недель)', count: 1},
+    {regexp: '(?i)in[ ]+([0-9]+)[ ]+(weeks|week)', count: 1}
+]
+
+months: [
+    {regexp: '(?i)через[ ]+([0-9]+)[ ]+(месяцев|месяца|месяц)', count: 1},
+    {regexp: '(?i)in[ ]+([0-9]+)[ ]+(months|month)', count: 1}
+]
+
+years: [
+    {regexp: '(?i)через[ ]+([0-9]+)[ ]+(года|год|лет)', count: 1},
+    {regexp: '(?i)in[ ]+([0-9]+)[ ]+(years|year)', count: 1}
+]
+
+day-parts: [
+    {regexp: '(?i)(с[ ]+утра|утром)', type: 0},
+    {regexp: '(?i)(днем)', type: 1},
+    {regexp: '(?i)(вечером)', type: 2},
+    {regexp: '(?i)(ночью)', type: 3},
+    {regexp: '(?i)(in[ ]+the[ ]+morning|this[ ]+morning|morning)', type: 0},
+    {regexp: '(?i)(in[ ]+the[ ]+afternoon|afternoon)', type: 1},
+    {regexp: '(?i)(in[ ]+the[ ]+evening|this[ ]+evening|evening)', type: 2},
+    {regexp: '(?i)(at[ ]+night|on[ ]+the[ ]+night|night)', type: 3}
+]
+
+month-names: [
+    {1: '(?i).*янв.*', 2: '(?i).*фев.*', 3: '(?i).*март.*', 4: '(?i).*апр.*', 5: '(?i).*май|мая.*', 6: '(?i).*июн.*', 7: '(?i).*июл.*', 8: '(?i).*авг.*', 9: '(?i).*сен.*', 10: '(?i).*окт.*', 11: '(?i).*ноя.*', 12: '(?i).*дек.*'},
+    {1: '(?i).*jan.*', 2: '(?i).*feb.*', 3: '(?i).*mar.*', 4: '(?i).*apr.*', 5: '(?i).*may.*', 6: '(?i).*jun.*', 7: '(?i).*jul.*', 8: '(?i).*aug.*', 9: '(?i).*sep.*', 10: '(?i).*okt.*', 11: '(?i).*nov.*', 12: '(?i).*dec.*'},
+    {1: '(?i).*enero.*', 2: '(?i).*febrero.*', 3: '(?i).*marzo.*', 4: '(?i).*abril.*', 5: '(?i).*mayo.*', 6: '(?i).*junio.*', 7: '(?i).*julio.*', 8: '(?i).*agosto.*', 9: '(?i).*setpiembre.*', 10: '(?i).*octubre.*', 11: '(?i).*noviembre.*', 12: '(?i).*deciembre.*'}
+]
+
+weekday-names: [
+    {1: '(?i).*воск.*|.*вс.*', 2: '(?i).*пон.*|.*пн.*', 3: '(?i).*втор.*|.*вт.*', 4: '(?i).*сред.*|.*ср.*', 5: '(?i).*чет.*|.*чт.*', 6: '(?i).*пят.*|.*пт.*', 7: '(?i).*суб.*|.*сб.*'},
+    {1: '(?i).*su.*', 2: '(?i).*mo.*', 3: '(?i).*tu.*', 4: '(?i).*we.*', 5: '(?i).*th.*', 6: '(?i).*fr.*', 7: '(?i).*sa.*'},
+    {1: '(?i).*lunes.*', 2: '(?i).*martes.*', 3: '(?i).*miércoles.*', 4: '(?i).*jueves.*', 5: '(?i).*viernes.*', 6: '(?i).*sábado.*', 7: '(?i).*domingo.*'}
+]
